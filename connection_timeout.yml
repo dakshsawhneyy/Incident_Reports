@@ -1,0 +1,20 @@
+DAY 1 INCIDENT REPORT:
+
+Context:
+  “Website is down. Users getting connection timeout.”
+Symptom:
+  Didn't allowed 8080 port in security group
+Impact:
+  users aren't able to access website
+Investigation Steps:
+  - ss -tulnp | grep 8080
+  - ufw status verbose
+  - security group check and firewall
+Root Cause:
+  - didn't allowed 8080 in vm sg
+Fix Applied:
+  - Allowed 8080 port in sg
+Prevention:
+  - Allowing ports while taking least priviledge into consideration
+Key Leanings:
+  - understood flow: First
